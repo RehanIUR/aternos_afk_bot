@@ -21,9 +21,15 @@ function createBot() {
     }
   });
 
-  bot.on("login", () => {
-    console.log(`[BOT] Logged in as ${bot.username}`);
-  });
+ bot.on("login", () => {
+  console.log(`[BOT] Logged in as ${bot.username}`);
+
+  bot.chat('/register MyNAMEisBOT1234 MyNAMEisBOT1234');
+
+  setTimeout(() => {
+    bot.chat('/login MyNAMEisBOT1234');
+  }, 10000);
+});
 
   function randomMove() {
     if (!bot.entity) return;
